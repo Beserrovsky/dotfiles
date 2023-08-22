@@ -12,8 +12,7 @@ Laptop config, great for coding, eletrical engineering and studying.
 - Unmount partition if needed
 > ```sudo umount /path/where/mounted```
 
-- Download ISO
-// In order to install OS: https://ubuntu.com/download/desktop
+- [Download ISO](https://ubuntu.com/download/desktop)
 
 - Create bootable USB Stick
 > ```sudo dd bs=4M if=/path/to/ISOfile of=/dev/sdx status=progress oflag=sync```
@@ -32,8 +31,8 @@ Laptop config, great for coding, eletrical engineering and studying.
 3. Welcome
 
 - Update software
-- sudo apt update && sudo apt upgrade -y
-- sudo snap refresh
+> `sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove`
+> `sudo snap refresh`
 - Firefox -> Bitwarden
 - Login firefox
 - ....
