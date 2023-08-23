@@ -20,4 +20,4 @@ echo "Installing Esp32 stuff...\n"
 # Code upload tools
 apt_install esptool # Flashing tool
 apt_install picocom # Serial monitor
-pip_install adafruit-ampy # File transfer tool
+pip3_install adafruit-ampy # File transfer tool

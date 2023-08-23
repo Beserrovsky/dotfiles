@@ -13,13 +13,15 @@ check_sudo # from core.sh
 printf "Installing basic programs...\n"
 
 # GNOME
-# apt_install chrome-gnome-shell
-# apt_install gnome-tweaks
-# apt_install gnome-shell-extensions
+apt_install gnome-shell-extensions # GNOME extensions
 
 # Text editors & File management
 snapc_install code # GUI editor
 apt_install vim # TUI editor
+snapc_install obsidian # Note taking
+apt_add syncthing "https://apt.syncthing.net/ syncthing stable" https://syncthing.net/release-key.gpg
+apt_install syncthing # File sync
+apt_install libreoffice # Office suite
 apt_install file # File type detection
 apt_install tree # File tree
 apt_install curl # File transfer
@@ -28,39 +30,25 @@ apt_install curl # File transfer
 apt_install vlc # Video player
 snap_install spotify # Music player
 
-# Productivity
-# apt_install libreoffice # Office suite
-
-# Video production
-# apt_install obs-studio # Screen recorder
-# apt_install ffmpeg # Video processing
-# apt_install handbrake # Video converter
-
 # Communication
 snap_install discord # Chat
 
 # Movies
-# apt_install qbittorrent # Torrent client
+apt_repo qbittorrent ppa:qbittorrent-team/qbittorrent-stable
+apt_install qbittorrent # Torrent client
 
 # Basic coding
-# apt_install git # Version control
-# apt_install gh # GitHub CLI
-
-# Image processing
-# apt_install gimp # Image editor
-# apt_install jpegoptim
-# apt_install optipng
-# apt_install pngquant
+apt_install git # Version control
+apt_install gh # GitHub CLI
+apt_install python3 # Python
 
 # Hardware management
-# apt_install neofetch # System info
-# apt_install gparted # Partition manager
-# apt_install htop # Process manager
-# apt_install lm-sensors # Hardware sensors
+apt_install neofetch # System info
+apt_install gparted # Partition manager
+apt_install htop # Process manager
+apt_install lm-sensors # Hardware sensors
+apt_install smartmontools # HDD/SSD health
+apt_install openvpn # VPN
+apt_install nmap # Network scanner
+apt_install speedtest-cli # Network speed test
 # apt_install tlp # Battery management
-# apt_install powertop # Battery management
-# apt_install cpufrequtils # CPU frequency management
-# apt_install smartmontools # HDD/SSD health
-# apt_install openvpn # VPN
-# apt_install nmap # Network scanner
-# apt_install speedtest-cli # Network speed test
