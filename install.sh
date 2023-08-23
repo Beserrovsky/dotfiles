@@ -2,12 +2,6 @@
 SCRIPT=$(readlink -f "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
 
-# Check if script is run with sudo priviligies 
-if [ $(sudo -n uptime 2>&1|grep "load"|wc -l) -eq 0 ]
-  then printf "Please run with sudo\n"
-  exit
-fi
-
 printf "Welcome to Beserrovsky's dotfiles installer!\nChoose toolkit to install: \n"
 printf "\n1. Full Install (hw dev, iot, coding, etc.)\n2. Basic Install (text editors, vlc, etc.)\n"
 printf "obs. #1 You can always install each script individually\n"

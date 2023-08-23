@@ -4,14 +4,17 @@
 # THIS FILE SHOULD BE SOURCED
 #
 
-# Check if script is run with sudo priviligies
-if [ $(sudo -n uptime 2>&1|grep "load"|wc -l) -eq 0 ]
-  then printf "Please run with sudo\n"
-  exit
-fi
-
 # Core functions
 
+# Check if script is run with sudo priviligies 
+function check_sudo {
+  if [ "$EUID" -ne 0 ]
+    then printf "Please run with sudo\n"
+    exit
+  fi
+}
+
+# Check if command already exists
 function already_exists {
   which $1 &> /dev/null
 

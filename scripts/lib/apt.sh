@@ -4,16 +4,15 @@
 # THIS FILE SHOULD BE SOURCED
 #
 
-# Check if script is run with sudo priviligies
-if [ $(sudo -n uptime 2>&1|grep "load"|wc -l) -eq 0 ]
-  then printf "Please run with sudo\n"
-  exit
-fi
-
 # Source core functions
 . $(dirname "$BASH_SOURCE")/core.sh
 
+# Check if script has su priviligies
+check_sudo # from core.sh
+
+#
 # Apt install functions
+#
 
 function apt_install {
   if already_exists $1; then

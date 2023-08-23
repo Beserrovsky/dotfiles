@@ -8,6 +8,9 @@ if [ $(sudo -n uptime 2>&1|grep "load"|wc -l) -eq 0 ]
   exit
 fi
 
-
 # Copy dotfiles configs to home folder
 cp -r $(BASEDIR)/user_config/.* ~/
+
+# Configure POP_OS Shell
+# Configure Terminal look
+# Configure GPG git key
