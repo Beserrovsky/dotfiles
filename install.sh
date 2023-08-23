@@ -2,10 +2,16 @@
 SCRIPT=$(readlink -f "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
 
+# Source util functions
+. $SCRIPTPATH/scripts/lib/utils.sh
+
+# Check if script has su priviligies
+check_sudo # from core.sh
+
 printf "Welcome to Beserrovsky's dotfiles installer!\nChoose toolkit to install: \n"
 printf "\n1. Full Install (hw dev, iot, coding, etc.)\n2. Basic Install (text editors, vlc, etc.)\n"
-printf "obs. #1 You can always install each script individually\n"
-printf "obs. #2 If you choose full install, move any undesired scripts to archive subfolder\n"
+printf "\nobs. You can always install each script individually\n"
+printf "obs. If you choose full install, move any undesired scripts to archive subfolder\n"
 choice=0
 while [ $choice -ne 1 ] && [ $choice -ne 2 ]
 do
@@ -25,12 +31,12 @@ done
 printf "...Making sure datetime is correct...\n"
 
 # Update software in computer
-# printf "...Updating system...\n"
-# sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove
-# sudo snap refresh
+printf "...Updating system...\n"
+sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove
+sudo snap refresh
 
 # Install basic toolkit
-# sudo bash $SCRIPTPATH/scripts/basics.sh
+sudo bash $SCRIPTPATH/scripts/basics.sh
 
 # Install full toolkit
 if [ $choice -eq 1 ]
