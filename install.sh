@@ -30,15 +30,15 @@ printf "...Making sure datetime is correct...\n"
 # sudo snap refresh
 
 # Install basic toolkit
-sudo bash $SCRIPTPATH/scripts/basics.sh
+# sudo bash $SCRIPTPATH/scripts/basics.sh
 
 # Install full toolkit
 if [ $choice -eq 1 ]
 then
-  for f in $(SCRIPTPATH)/scripts/*.sh; do
-    if [ $script != "basics.sh" ]
+  for script in $SCRIPTPATH/scripts/*.sh; do
+    if [ $script != $SCRIPTPATH/scripts/"basics.sh" ]
     then
-      sudo bash "$(SCRIPTPATH)/scripts/$f" -H; 
+      sudo bash $script -H; 
     fi
   done
 fi
