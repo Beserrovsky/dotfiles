@@ -16,6 +16,11 @@ function check_sudo {
 
 # Check if command already exists
 function already_exists {
+
+  if [ -e "/opt/$1.AppImage" ]; then
+    return 0;
+  fi
+
   which $1 &> /dev/null
 
   if [ $? -ne 0 ]; then

@@ -11,22 +11,22 @@
 check_sudo # from core.sh
 
 #
-# Snap install functions
+# Snap classic install functions
 #
 
-function snap_install {
+function snapc_install {
   if already_exists $1; then
     echo "Already installed: ${1}"
   else
     echo "Installing: ${1}..."
-    sudo snap install $1
+    sudo snap install $1 --classic
   fi
 }
 
-function snap_remove {
+function snapc_remove {
   if already_exists $1; then
     echo "Removing: ${1}..."
-    sudo snap remove $1
+    sudo snap remove $1 --classic
   else
     echo "Already removed: ${1}"
   fi

@@ -11,22 +11,23 @@
 check_sudo # from core.sh
 
 #
-# Snap install functions
+# AppImage install functions
 #
 
-function snap_install {
+function appimg_install {
   if already_exists $1; then
     echo "Already installed: ${1}"
   else
     echo "Installing: ${1}..."
-    sudo snap install $1
+    sudo wget $2 -O /opt/$1.AppImage
+    sudo chmod +x /opt/$1.AppImage
   fi
 }
 
-function snap_remove {
+function appimg_remove {
   if already_exists $1; then
     echo "Removing: ${1}..."
-    sudo snap remove $1
+    sudo rm /opt/$1.AppImage
   else
     echo "Already removed: ${1}"
   fi

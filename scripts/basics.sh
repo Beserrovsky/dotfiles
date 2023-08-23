@@ -18,15 +18,15 @@ printf "Installing basic programs...\n"
 # apt_install gnome-shell-extensions
 
 # Text editors & File management
-# apt_install code # GUI editor
-# apt_install vim # TUI editor
-# apt_install file # File type detection
-# apt_install tree # File tree
-# apt_install curl # File transfer
+snapc_install code # GUI editor
+apt_install vim # TUI editor
+apt_install file # File type detection
+apt_install tree # File tree
+apt_install curl # File transfer
 
 # Media
-# apt_install vlc # Video player
-# apt_install spotify # Music player
+apt_install vlc # Video player
+snap_install spotify # Music player
 
 # Productivity
 # apt_install libreoffice # Office suite
@@ -37,7 +37,7 @@ printf "Installing basic programs...\n"
 # apt_install handbrake # Video converter
 
 # Communication
-# apt_install discord # Chat
+snap_install discord # Chat
 
 # Movies
 # apt_install qbittorrent # Torrent client
@@ -64,6 +64,3 @@ printf "Installing basic programs...\n"
 # apt_install openvpn # VPN
 # apt_install nmap # Network scanner
 # apt_install speedtest-cli # Network speed test
-
-# Get all upgrades
-sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
