@@ -12,6 +12,10 @@ check_sudo # from core.sh
 
 printf "Installing basic programs...\n"
 
+# Essential libraries & tools
+apt_install build-essential # Build tools
+apt_install libfuse2 # FUSE
+
 # GNOME
 apt_install gnome-shell-extensions # GNOME extensions
 
