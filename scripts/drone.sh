@@ -14,7 +14,7 @@ printf "Installing drone programs...\n"
 
 if ! already_exists QGroundControl; then
   printf "Installing QGroundControl...\n"
-  sudo usermod -a -G dialout $USER
+  sudo usermod -a -G dialout $SUDO_USER
   sudo apt remove modemmanager -y
   sudo apt install gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl -y
   sudo apt install libqt5gui5 -y
