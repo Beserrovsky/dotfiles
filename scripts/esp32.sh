@@ -17,6 +17,9 @@ fi
 
 echo "Installing Esp32 stuff...\n"
 
+# lib required for platformio
+apt_install python3-venv
+
 # Code upload tools
 apt_install esptool # Flashing tool
 apt_install picocom # Serial monitor
