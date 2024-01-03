@@ -22,11 +22,12 @@ apt_install gnome-shell-extensions # GNOME extensions
 # Text editors & File management
 snapc_install code # GUI editor
 apt_install vim # TUI editor
-snapc_install obsidian # Note taking
+snap_install logseq # Note taking
 apt_add syncthing "https://apt.syncthing.net/ syncthing stable" https://syncthing.net/release-key.gpg
 apt_install syncthing # File sync
 apt_install libreoffice # Office suite
 apt_install file # File type detection
+snap_install mdless # Markdown viewer
 apt_install tree # File tree
 apt_install curl # File transfer
 
