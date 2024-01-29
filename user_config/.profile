@@ -5,6 +5,7 @@
 alias du='du -h -s'
 alias diff='diff --color --unified=0'
 alias copyfile='xclip -selection clipboard'
+alias tmux='TERM=xterm-256color tmux'
 
 # PATH
 
